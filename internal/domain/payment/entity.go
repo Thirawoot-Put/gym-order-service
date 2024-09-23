@@ -16,4 +16,6 @@ type Order struct {
 	PaymentMethod *string `gorm:"type:string(50);column:payment_method"`
 	ReservedCount int     `gorm:"default:0;column:reserved_count"`
 	SeatLabel     *string `gorm:"type:varchar(255);column:seat_label"`
+
+	Vat *float64 `gorm:"type:decimal(5,2);column:vat"`
 }
