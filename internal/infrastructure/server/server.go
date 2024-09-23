@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/infrastructure/database"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,7 +21,8 @@ func AppServer() *Server {
 }
 
 func (s *Server) Start(port string) {
-	// connect database
+	database.Connecting()
+
 	s.app.GET("/health-check", healthCheck)
 
 	url := fmt.Sprintf(":%s", port)
