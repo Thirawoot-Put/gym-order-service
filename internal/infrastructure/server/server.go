@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/handler"
 	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/infrastructure/database"
+	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/repository"
+	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/service"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,9 +24,18 @@ func AppServer() *Server {
 }
 
 func (s *Server) Start(port string) {
-	database.Connecting()
+	db := database.Connecting()
+
+	orderReposetory := repository.NewOrderRepository(db)
+	orderService := service.NewOrderService(orderReposetory)
+	orderHandler := handler.NewOrderHandler(orderService)
 
 	s.app.GET("/health-check", healthCheck)
+
+	// order route
+	s.app.POST("/orders", orderHandler.CreateOrder)
+	s.app.PATCH("/orders", orderHandler.UpdateOrder)
+	s.app.GET("/orders/users/:id", orderHandler.GetOrderByUserId)
 
 	url := fmt.Sprintf(":%s", port)
 	s.HTTPListenPort(url)
