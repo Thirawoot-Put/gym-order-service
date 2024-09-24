@@ -1,13 +1,12 @@
 services:
   database:
-    image: mysql:8.0
+    image: postgres
     container_name: payment-db
     restart: always
     ports:
-      - 3309:3306
+      - 5434:5432
     environment:
       TZ: Asia/Bangkok
-      MYSQL_ROOT_PASSWORD: 1234
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: 1234
-      MYSQL_DATABASE: payment-db-service
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: payment-db-service

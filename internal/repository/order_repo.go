@@ -23,6 +23,6 @@ func (r *orderRepository) Update(order *domain.OrderRepository) error {
 
 func (r *orderRepository) GetByUserId(userId uint) ([]domain.OrderEntity, error) {
 	var orders []domain.OrderEntity
-	err := r.db.Where("userId = ?", userId).Find(&orders).Error
+	err := r.db.Find(&orders, r.db.Where("userId = ?", userId)).Error
 	return orders, err
 }
