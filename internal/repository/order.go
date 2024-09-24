@@ -5,23 +5,23 @@ import (
 	"gorm.io/gorm"
 )
 
-type orderRepository struct {
+type OrderRepository struct {
 	db *gorm.DB
 }
 
-func NewOrderRepository(db *gorm.DB) *orderRepository {
-	return &orderRepository{db: db}
+func NewOrderRepository(db *gorm.DB) *OrderRepository {
+	return &OrderRepository{db: db}
 }
 
-func (r *orderRepository) Create(order *domain.OrderRepository) error {
+func (r *OrderRepository) Create(order *domain.OrderEntity) error {
 	return r.db.Create(order).Error
 }
 
-func (r *orderRepository) Update(order *domain.OrderRepository) error {
+func (r *OrderRepository) Update(order *domain.OrderEntity) error {
 	return r.db.Save(order).Error
 }
 
-func (r *orderRepository) GetByUserId(userId uint) ([]domain.OrderEntity, error) {
+func (r *OrderRepository) GetByUserId(userId uint) ([]domain.OrderEntity, error) {
 	var orders []domain.OrderEntity
 	err := r.db.Find(&orders, r.db.Where("userId = ?", userId)).Error
 	return orders, err
