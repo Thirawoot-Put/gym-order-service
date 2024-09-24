@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/handler"
+	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/handler/api"
 	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/infrastructure/database"
 	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/repository"
 	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/service"
@@ -28,7 +28,7 @@ func (s *Server) Start(port string) {
 
 	orderReposetory := repository.NewOrderRepository(db)
 	orderService := service.NewOrderService(orderReposetory)
-	orderHandler := handler.NewOrderHandler(orderService)
+	orderHandler := api.NewOrderHandler(orderService)
 
 	s.app.GET("/health-check", healthCheck)
 
