@@ -1,0 +1,3 @@
+CREATETABLEorders IFNOTEXISTS(
+  id
+)

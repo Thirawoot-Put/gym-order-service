@@ -1,5 +1,7 @@
 package domain
 
+import "time"
+
 type OrderEntity struct {
 	ID uint `gorm:"type:uuid;autoIncrement;primaryKey"`
 
@@ -7,6 +9,7 @@ type OrderEntity struct {
 	InvoiceNo *string `gorm:"type:varchar(255);unique"`
 
 	Vat         *float64 `gorm:"type:decimal(5,2)"`
+	Service     *float64 `gorm:"type:decimal(5,2)"`
 	Amount      float64  `gorm:"type:decimal(10,2);default:0"`
 	TotalAmount float64  `gorm:"type:decimal(10,2);default:0"`
 
@@ -14,6 +17,9 @@ type OrderEntity struct {
 	PaymentMethod *string `gorm:"type:string(50)"`
 
 	SeatLabel *string `gorm:"type:varchar(255)"`
+
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 type OrderRepository interface {
