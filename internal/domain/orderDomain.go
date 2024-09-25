@@ -22,8 +22,8 @@ type OrderEntity struct {
 	UpdatedAt time.Time
 }
 
-type OrderRepository interface {
-	Create(order *OrderEntity) error
-	Update(order *OrderEntity) error
-	GetByUserId(userId uint) ([]OrderEntity, error)
-}
+// type OrderRepository interface {
+// 	Create(order *OrderEntity) error
+// 	Update(order *OrderEntity) error
+// 	GetByUserId(userId uint) ([]OrderEntity, error)
+// }

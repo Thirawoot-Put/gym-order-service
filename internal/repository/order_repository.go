@@ -18,7 +18,8 @@ func (r *OrderRepository) Create(order *domain.OrderEntity) error {
 }
 
 func (r *OrderRepository) Update(order *domain.OrderEntity) error {
-	return r.db.Save(order).Error
+	return r.db.Model(&order).Updates(order).Error
+	// return r.db.Save(order).Error
 }
 
 func (r *OrderRepository) GetByUserId(userId uint) ([]domain.OrderEntity, error) {
