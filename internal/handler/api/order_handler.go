@@ -18,7 +18,7 @@ func NewOrderHandler(service *service.OrderService) *OrderHandler {
 }
 
 func (h *OrderHandler) CreateOrder(c *gin.Context) {
-	var order domain.OrderEntity
+	var order domain.Orders
 	if err := c.ShouldBindJSON(&order); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request"})
 		return
@@ -33,7 +33,7 @@ func (h *OrderHandler) CreateOrder(c *gin.Context) {
 }
 
 func (h *OrderHandler) UpdateOrder(c *gin.Context) {
-	var order domain.OrderEntity
+	var order domain.Orders
 	if err := c.ShouldBindJSON(&order); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request"})
 		return
