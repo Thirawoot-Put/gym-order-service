@@ -30,8 +30,8 @@ func (s *OrderService) GetOrderByUserId(userId uint) ([]domain.Orders, error) {
 	// add business logic here
 	orders, err := s.repo.GetByUserId(userId)
 	if err != nil {
-		errMsg := fmt.Errorf("Error to get orders of %d, error: %w", userId, err)
-		return nil, errMsg
+		error := fmt.Errorf("Error to get orders of %d, error: %w", userId, err)
+		return nil, error
 	}
 
 	return orders, nil
