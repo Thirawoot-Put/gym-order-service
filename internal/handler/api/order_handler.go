@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/domain"
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/service"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/domain"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/service"
 	"github.com/gin-gonic/gin"
 )
 

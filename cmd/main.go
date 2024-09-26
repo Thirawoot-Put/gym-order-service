@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/infrastructure/server"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/infrastructure/server"
 	"github.com/joho/godotenv"
 )
 

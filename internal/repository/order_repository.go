@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/domain"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/domain"
 	"gorm.io/gorm"
 )
 

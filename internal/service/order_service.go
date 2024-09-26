@@ -3,8 +3,8 @@ package service
 import (
 	"fmt"
 
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/domain"
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/repository"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/domain"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/repository"
 )
 
 type OrderService struct {

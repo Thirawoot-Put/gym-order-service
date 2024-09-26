@@ -1,4 +1,4 @@
-module github.com/Thirawoot-Put/event-ticketing/payment-service
+module github.com/Thirawoot-Put/event-ticketing/order-service
 
 go 1.22.5
 

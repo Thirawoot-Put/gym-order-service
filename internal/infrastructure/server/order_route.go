@@ -1,9 +1,9 @@
 package server
 
 import (
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/handler/api"
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/repository"
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/service"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/handler/api"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/repository"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/service"
 	"gorm.io/gorm"
 )
 

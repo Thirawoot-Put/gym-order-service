@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Thirawoot-Put/event-ticketing/payment-service/internal/infrastructure/database"
+	"github.com/Thirawoot-Put/event-ticketing/order-service/internal/infrastructure/database"
 	"github.com/gin-gonic/gin"
 )
 
