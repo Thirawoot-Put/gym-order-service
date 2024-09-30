@@ -11,8 +11,8 @@ func (s *Server) initOrderRoute(db *gorm.DB) {
 	orderRoute := s.app.Group("/api/v1/orders")
 
 	orderReposetory := repository.NewOrderRepository(db)
-	ervice := service.NewOrderService(orderReposetory)
-	orderHandler := api.NewOrderHandler(ervice)
+	service := service.NewOrderService(orderReposetory)
+	orderHandler := api.NewOrderHandler(service)
 
 	orderRoute.POST("", orderHandler.CreateOrder)
 	orderRoute.PATCH("", orderHandler.UpdateOrder)
